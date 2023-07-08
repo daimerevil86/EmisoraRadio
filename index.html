@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emisora MUGA Stereo</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+    <meta name="msapplication-TileColor" content="##d62233>
+    <meta name="msapplication-TileImage" content="/img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#d62233">
+    <link rel="shorcut icon" href="./img/mic.ico" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#">MUGA Stereo</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Ayuda</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        <h1>Emisora MUGA Stereo</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <i id="signal" class="fa-solid fa-signal fa-lg"></i>
+                </div>
+                <audio controls autoplay id="player">
+                    <source src="" >
+                    Tu Navegador no soporta este elemento.
+                </audio>
+                <div class="col-sm">
+                    <select id="selector" 
+                    onchange="cambiarEmisora(this)"
+                    class="form-select" 
+                    aria-label="Default select example">
+                        <option selected>Selecciona una...</option>
+                        
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <button onclick="play()" id="play" type="button" class="btn btn-info">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button onclick="pause()" id="pause" type="button" class="btn btn-info">
+                        <i class="fa-solid fa-pause"></i>
+                    </button>
+                </div>
+                <div class="col-sm">
+                    <label for="volumen" class="form-label">Volumen</label>
+                    <input onchange="changeVol(this)" 
+                    type="range" 
+                    class="form-range" 
+                    id="volumen"
+                    min = "0"
+                    max="100"
+                    step="5">
+                </div>
+                <div class="col-sm">
+                    <img src="./img/Escuchar-musica.jpg" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./serviceWorker.js"></script>
+</body>
+
+</html>
